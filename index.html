@@ -1,0 +1,978 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamica Rio Ferramentas Elétricas - Venda, Manutenção e Assistência Técnica</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #E63946;
+            --primary-dark: #C1121F;
+            --secondary: #1D2D44;
+            --dark: #0D1B2A;
+            --light-bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-dark: #212529;
+            --text-muted: #6C757D;
+            --border-color: #E9ECEF;
+            --accent-yellow: #FFB703;
+            --whatsapp-green: #25D366;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+            --shadow-lg: 0 16px 32px rgba(0,0,0,0.15);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- TOP BAR & HEADER --- */
+        .top-bar {
+            background-color: var(--dark);
+            color: #fff;
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .top-bar-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-bar-info i {
+            color: var(--accent-yellow);
+        }
+
+        .top-bar-badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.4);
+        }
+
+        .logo-text h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2rem;
+            line-height: 0.9;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-header {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-header:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.92) 0%, rgba(29, 45, 68, 0.95) 100%), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 90px 5% 110px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(230, 57, 70, 0.2);
+            border: 1px solid var(--primary);
+            color: #FF9E9E;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h2 span {
+            color: var(--accent-yellow);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #E0E1DD;
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+            font-weight: 300;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 15px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1eb954;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* --- STATS STRIP --- */
+        .stats-bar {
+            background: #ffffff;
+            margin: -50px 5% 60px 5%;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--border-color);
+            padding: 10px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .section-padding {
+            padding: 60px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-link:hover {
+            gap: 10px;
+        }
+
+        /* --- REDIRECT / STORE PROMO BANNER --- */
+        .store-promo {
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--dark) 100%);
+            border-radius: var(--radius);
+            color: white;
+            padding: 50px;
+            margin: 40px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .store-promo::after {
+            content: '\f07a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: -30px;
+            bottom: -40px;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+
+        .store-promo-text h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--accent-yellow);
+        }
+
+        .store-promo-text p {
+            font-size: 1.05rem;
+            color: #D8F3DC;
+            max-width: 600px;
+        }
+
+        /* --- COMPANY INFORMATION (CADASTRO / REGISTRO) --- */
+        .info-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .info-card h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .info-card h4 i {
+            color: var(--primary);
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #E2E8F0;
+        }
+
+        .info-table td:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            width: 45%;
+        }
+
+        .info-value {
+            color: var(--dark);
+            font-weight: 700;
+            width: 55%;
+        }
+
+        .badge-status {
+            background: #D4EDDA;
+            color: #155724;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* --- CONTACT & LOCATION --- */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h5 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-item p, .contact-item a {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .mail-box-correspondencia {
+            background: #FFF9E6;
+            border: 1px dashed var(--accent-yellow);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.88rem;
+        }
+
+        .mail-box-correspondencia strong {
+            color: #B7791F;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark);
+            color: #A0AEC0;
+            padding: 60px 5% 20px 5%;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2D3748;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 { font-size: 2.2rem; }
+            .contact-section { grid-template-columns: 1fr; }
+            .store-promo { flex-direction: column; text-align: center; }
+            nav ul { display: none; } /* Simplified for single-file demo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-file-contract"></i> CNPJ: 39.084.280/0001-07</span>
+            <span><i class="fa-solid fa-id-card"></i> IE RJ: 84.142.88-3</span>
+            <span><i class="fa-solid fa-clock"></i> Fundada em 12/11/1990 (35 anos de tradição)</span>
+        </div>
+        <div>
+            <span class="top-bar-badge"><i class="fa-solid fa-circle-check" style="color:#25D366;"></i> Empresa Ativa</span>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header>
+        <a href="https://loja.dinamicario.com.br/" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="logo-text">
+                <h1>DINAMICA RIO</h1>
+                <span>Ferramentas Elétricas</span>
+            </div>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#servicos">Principais Serviços</a></li>
+                <li><a href="#loja">Loja Virtual</a></li>
+                <li><a href="#empresa">Dados Cadastrais</a></li>
+                <li><a href="#contato">Contato & Endereço</a></li>
+            </ul>
+        </nav>
+
+        <a href="https://loja.dinamicario.com.br/" target="_blank" class="btn-header">
+            <i class="fa-solid fa-cart-shopping"></i> Visitar Loja Online
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Tradição & Qualidade desde 1990</div>
+        <h2>Sua Solução Completa em <span>Ferramentas Elétricas</span> no Rio de Janeiro</h2>
+        <p>Venda de ferramentas de alta performance, peças de reposição e assistência técnica especializada com a garantia de mais de 35 anos de experiência no mercado.</p>
+        
+        <div class="hero-cta-group">
+            <a href="https://loja.dinamicario.com.br/" target="_blank" class="btn-primary">
+                <i class="fa-solid fa-store"></i> Acessar Catálogo na Loja Virtual
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5521964783243" target="_blank" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- QUICK STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">35+</div>
+            <div class="stat-label">Anos no Mercado</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Garantia & Procedência</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">RJ</div>
+            <div class="stat-label">Vila da Penha</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Loja Online Ativa</div>
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION (TÓPICOS DE PRINCIPAIS SERVIÇOS) -->
+    <section id="servicos" class="section-padding">
+        <div class="section-header">
+            <span class="section-subtitle">O Que Fazemos</span>
+            <h2 class="section-title">Principais Serviços & Soluções</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-cart-flatbed"></i>
+                </div>
+                <h3>Venda de Ferramentas Elétricas</h3>
+                <p>Compre furadeiras, parafusadeiras, esmerilhadeiras, serras e martelos das melhores marcas do mercado diretamente em nossa loja oficial com entrega rápida.</p>
+                <a href="https://loja.dinamicario.com.br/" target="_blank" class="service-link">Ver na Loja <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-screws-gutter"></i>
+                </div>
+                <h3>Peças e Acessórios Originais</h3>
+                <p>Fornecimento completo de induzidos, estatores, escovas de carvão, engrenagens, rolamentos e interruptores para manutenção corretiva.</p>
+                <a href="https://loja.dinamicario.com.br/" target="_blank" class="service-link">Buscar Peças <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h3>Manutenção & Reparo Técnico</h3>
+                <p>Equipe especializada em manutenção preventiva e corretiva de equipamentos elétricos industriais e profissionais com diagnóstico preciso.</p>
+                <a href="https://api.whatsapp.com/send?phone=5521964783243" target="_blank" class="service-link">Solicitar Orçamento <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3>Consultoria e Atendimento Técnico</h3>
+                <p>Orientação especializada para escolha das melhores ferramentas para a sua obra, marcenaria, oficina ou indústria.</p>
+                <a href="tel:21964783243" class="service-link">Ligar Agora <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECT REDIRECT BANNER -->
+    <div id="loja" class="store-promo">
+        <div class="store-promo-text">
+            <h3>Conheça Nossa Loja Virtual Oficial!</h3>
+            <p>Acesse nosso e-commerce para conferir preços exclusivos, ofertas especiais e efetuar suas compras com total segurança e praticidade.</p>
+        </div>
+        <div>
+            <a href="https://loja.dinamicario.com.br/" target="_blank" class="btn-primary" style="background: white; color: var(--dark); padding: 18px 36px; font-size: 1.1rem;">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--primary);"></i> Ir para loja.dinamicario.com.br
+            </a>
+        </div>
+    </div>
+
+    <!-- DETAILED COMPANY INFO SECTION -->
+    <section id="empresa" class="section-padding info-section">
+        <div class="section-header">
+            <span class="section-subtitle">Transparência e Confiança</span>
+            <h2 class="section-title">Informações de Registro da Empresa</h2>
+        </div>
+
+        <div class="info-grid">
+            <!-- CARDE 1: IDENTIFICAÇÃO -->
+            <div class="info-card">
+                <h4><i class="fa-solid fa-building"></i> Identificação Jurídica</h4>
+                <table class="info-table">
+                    <tr>
+                        <td class="info-label">Razão Social</td>
+                        <td class="info-value">Dinamica Rio Ferramentas Eletricas LTDA</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">CNPJ</td>
+                        <td class="info-value">39.084.280/0001-07</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Inscrição Estadual (RJ)</td>
+                        <td class="info-value">84.142.88-3</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Tipo / Matriz</td>
+                        <td class="info-value">Matriz</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Situação Cadastral</td>
+                        <td class="info-value"><span class="badge-status">ATIVA</span></td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Data Situação</td>
+                        <td class="info-value">28/08/2004</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- CARDE 2: DADOS DE ABERTURA E PORTE -->
+            <div class="info-card">
+                <h4><i class="fa-solid fa-chart-line"></i> Dados Empresariais</h4>
+                <table class="info-table">
+                    <tr>
+                        <td class="info-label">Data de Abertura</td>
+                        <td class="info-value">12/11/1990</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Tempo de Atividade</td>
+                        <td class="info-value">35 anos, 10 meses e 4 dias</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Porte Empresarial</td>
+                        <td class="info-value">Micro Empresa (ME)</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Natureza Jurídica</td>
+                        <td class="info-value">Sociedade Empresária Limitada</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Capital Social</td>
+                        <td class="info-value">R$ 10.000,00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- CARDE 3: REGIME TRIBUTÁRIO -->
+            <div class="info-card">
+                <h4><i class="fa-solid fa-file-invoice-dollar"></i> Regime Tributário</h4>
+                <table class="info-table">
+                    <tr>
+                        <td class="info-label">Opção pelo MEI</td>
+                        <td class="info-value">Não</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Opção pelo Simples</td>
+                        <td class="info-value">Não</td>
+                    </tr>
+                    <tr>
+                        <td class="info-label">Período Histórico Simples</td>
+                        <td class="info-value">01/07/2007 - 31/12/2024</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION SECTION -->
+    <section id="contato" class="section-padding">
+        <div class="section-header">
+            <span class="section-subtitle">Localização & Atendimento</span>
+            <h2 class="section-title">Entre em Contato Conosco</h2>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-box">
+                <h4 style="margin-bottom: 25px; color: var(--secondary);"><i class="fa-solid fa-address-book" style="color: var(--primary);"></i> Canais de Comunicação</h4>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h5>E-mail Comercial</h5>
+                        <p><a href="mailto:dinamicario@hotmail.com">dinamicario@hotmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h5>Telefone Central</h5>
+                        <p><a href="tel:21964783243">(21) 96478-3243</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <h5>WhatsApp Vendas / Suporte</h5>
+                        <p><a href="https://api.whatsapp.com/send?phone=5521964783243" target="_blank">(21) 96478-3243</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <div>
+                        <h5>Loja Virtual Oficial</h5>
+                        <p><a href="https://loja.dinamicario.com.br/" target="_blank">loja.dinamicario.com.br</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <h4 style="margin-bottom: 25px; color: var(--secondary);"><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Endereço da Loja Física</h4>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <div>
+                        <h5>Logradouro</h5>
+                        <p>Avenida Braz de Pina, 1310 - Loja</p>
+                        <p style="font-weight: 400; color: var(--text-muted);">Vila da Penha - Rio de Janeiro / RJ</p>
+                        <p style="font-weight: 400; color: var(--text-muted);">CEP: 21210-675</p>
+                    </div>
+                </div>
+
+                <div class="mail-box-correspondencia">
+                    <strong><i class="fa-solid fa-box-archive"></i> Endereço para Correspondência:</strong>
+                    Dinamica Rio Ferramentas Eletricas LTDA<br>
+                    Avenida Braz de Pina 1310 Loja - Vila da Penha<br>
+                    Rio de Janeiro - RJ | CEP: 21210-675
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://maps.google.com/?q=Avenida+Braz+de+Pina+1310+Vila+da+Penha+Rio+de+Janeiro" target="_blank" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-route"></i> Ver Rota no Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="color: white; font-weight: 800;">DINAMICA RIO</h4>
+                <p style="margin-bottom: 15px;">Dinamica Rio Ferramentas Eletricas LTDA<br>CNPJ: 39.084.280/0001-07</p>
+                <p>Sua loja de confiança no Rio de Janeiro para ferramentas elétricas e serviços especializados.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="https://loja.dinamicario.com.br/" target="_blank"><i class="fa-solid fa-angle-right"></i> Loja Virtual Oficial</a></li>
+                    <li><a href="#servicos"><i class="fa-solid fa-angle-right"></i> Nossos Serviços</a></li>
+                    <li><a href="#empresa"><i class="fa-solid fa-angle-right"></i> Dados da Empresa</a></li>
+                    <li><a href="#contato"><i class="fa-solid fa-angle-right"></i> Localização & Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> (21) 96478-3243</li>
+                    <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> dinamicario@hotmail.com</li>
+                    <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Vila da Penha - RJ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dinamica Rio Ferramentas Eletricas LTDA. Todos os direitos reservados. | Desenvolvido com excelência.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
